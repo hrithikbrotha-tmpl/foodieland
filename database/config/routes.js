@@ -1,8 +1,8 @@
-// const about = require("../../routes/about");
-// const authors = require('./../../routes/authors');
+const about = require("../../routes/about");
+const authors = require('./../../routes/authors');
 const blogs = require("./../../routes/blogs&recipies");
 const subscribers = require("./../../routes/subscribers");
-// const singleBlog = require("./../../routes/singleBlog");
+const singleBlog = require("./../../routes/singleBlog");
 
 module.exports =(app) =>{
 
@@ -15,8 +15,8 @@ module.exports =(app) =>{
 
       app.use("/subscribers", subscribers);
 
-//       app.use("/authors", authors);
+      app.use("/authors", authors);
       
-//       app.use("./about", about);
+      app.use("/about", about);
       
 }
