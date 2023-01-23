@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "4081h",
+    "database": "foodieland",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": null,
+    "database": "foodieland",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": null,
+    "database": "foodieland",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
