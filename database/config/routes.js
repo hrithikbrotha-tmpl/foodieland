@@ -12,11 +12,8 @@ module.exports =(app) =>{
       app.use("/", blogs); 
       app.use("/blog" , blogs);
       app.use("/blog/:id", singleBlog);
-
       app.use("/subscribers", subscribers);
-
-      app.use("/authors", authors);
-      
+      app.use("/authors", authors); 
       app.use("/about", about);
       
 }
