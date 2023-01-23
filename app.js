@@ -1,8 +1,8 @@
 require('dotenv/config')
 const express = require("express");
 const app = express();
-const db = require("../foodieland/database/models");
-const config = require("../foodieland/database/config/routes");
+const db = require("./database/models");
+const config = require("./database/config/routes");
 const PORT = process.env.PORT || 3000;
 
 // MIDDLEWARE
