@@ -27,8 +27,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       unique: true,
     },
-    category: {
-      type: DataTypes.STRING,
+    authorId: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
 });

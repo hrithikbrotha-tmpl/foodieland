@@ -5,7 +5,7 @@ module.exports = (sequelize, Datatypes) => {
     id: {
       type: Datatypes.INTEGER,
       primaryKey: true,
-//       auto_Increment: true,
+      auto_Increment: true,
     },
     bannerImg: {
       type: DataTypes.STRING,

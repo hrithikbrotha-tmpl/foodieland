@@ -6,7 +6,7 @@ const subscribersRouter = express.Router();
 
 console.log("WORKINGGGG🐷🐷")
 
-subscribersRouter.get("/", subscribersController.gets);
+subscribersRouter.get("/s", subscribersController.gets);
 subscribersRouter.post("/", subscribersController.posts); 
 
 

@@ -6,13 +6,28 @@ const Sequelize = require('sequelize');
 const process = require('process');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../config/config.json')[env];
+const config = require(path.join(__dirname,'/../config/config.js'))[env];
 const db = {};
 
 let sequelize;
-if (config.db_uri) {        
-  sequelize = new Sequelize(config.db_uri);
+let db_uri = process.env.DB_URI
+
+//if using cloud db locally
+// if (config.db_uri) {
+//     console.log("cloud db is running...");
+//     console.log("cloud db is running...");
+//     console.log("cloud db is running...");
+//     sequelize = new Sequelize(config.db_uri);
+
+// if using cloud db on cloud
+if (db_uri){
+    sequelize = new Sequelize(db_uri)
+    console.log("Connected to the database!")
 } else {
+    console.log("local db is running...");
+    console.log("local db is running...");
+    console.log("local db is running...");
+
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 

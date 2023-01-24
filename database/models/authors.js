@@ -19,6 +19,5 @@ module.exports = (sequelize, Datatypes) => {
       unique: true,
     },
   });
-  // authors.hasMany()   ---ASSOCIATEIONS
   return authors;
 };

@@ -6,7 +6,7 @@ module.exports = (sequelize , Datatypes) => {
                   auto_Increment: true,
                 },
                 email: {
-                  type: Datatypes.TEXT,
+                  type: Datatypes.STRING,
                   allowNull: false,
                   unique: true,
                   validate: {
