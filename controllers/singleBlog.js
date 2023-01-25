@@ -1,18 +1,21 @@
-const { where } = require("sequelize");
-const db = require("../database/models"); 
+const db = require("../database/models");
 
- module.exports = {
-
-   singleBlog: async (req, res) => {
-    try { 
-        let {id} = req.query;
-       let blog = await db.blogs.findOne({where:{id:id}})
-        console.log(blog)
-                 if(blog != null){
-                               res.json({blog:blog});
-                 }
+module.exports = {
+  singleBlog: async (req, res) => {
+    console.log(req.params.id);
+    try {
+      let id  = req.params.id;
+      let blog = await db.blogs.findAll({ where: {id} });
+      console.log(blog);
+      if (blog != null) {
+        res.json(blog);
+      }
+      else{
+        res.send("No discription");
+      }
     } catch (error) {
-        res.status(404).send(error.message)
+        console.log(error)
+      res.status(404).send("NoT");
     }
-}
- };
+  },
+};

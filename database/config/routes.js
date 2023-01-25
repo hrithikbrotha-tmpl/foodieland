@@ -14,11 +14,11 @@ module.exports =(app) =>{
       
       app.use("/", blogs); 
       app.use("/blog" , blogs);
-      app.use("/blog", singleBlog);
       app.use("/about", about);
       app.use('/questions' ,questions);
+      app.use("/blog", singleBlog);
+      app.use("/subscribers", subscribers);
+     //       app.use('/' , search);
 //   app.use("/authors", authors); 
-//       app.use('/' , search);
 //       app.use('/' , topRecipiesRouter)
-//       app.use("/subscribers", subscribers);
 }
