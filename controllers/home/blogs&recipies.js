@@ -1,6 +1,7 @@
 const db = require("./../../database/models");
 
 module.exports = {
+    
   //getAllBlogs
   getBlogs:async (req, res) => {
 
@@ -21,11 +22,10 @@ module.exports = {
       totalPages.push(i);
     }
      return res.status(200).json(allBlogs)
-
     // const allBlogs = await db.blogs.findAll();
   },
 
-  //createBlogs
+    //createBlogs
 
   postBlogs: async (req, res) => {
     const { title, shortDescription, fullDescription, bannerImg, authorId } =

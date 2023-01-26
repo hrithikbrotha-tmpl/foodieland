@@ -2,11 +2,12 @@ module.exports = (sequelize , Datatypes) => {
               const about = sequelize.define("about" , {
                      bannerImg : {
                             type: Datatypes.STRING,
-                            allowNull:false,
+                            // allowNull:false,
                      },    
                      content:{
                             type:Datatypes.TEXT,
-                            allowNull:false,
+                            
+                            // allowNull:false,
                      }
               });
               return about;

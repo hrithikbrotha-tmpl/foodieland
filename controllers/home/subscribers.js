@@ -2,28 +2,29 @@ const db = require("../../database/models");
 // const express = require("express");
 
 module.exports = {
-  gets: async (req, res) => {
+  see: async (req, res) => {
     let s = await db.subscribers.findAll();
     console.log("❤️‍🔥❤️‍🔥❤️‍🔥");
     res.status(200).json(s);
   },
-  posts: async (req, res) => {
-    const mail = req.body.email;
-    if (!mail) {
-      res.status(401).send("Enter email!");
-    } else {
-      const re = await db.subscribers.findOne({ where: { email: mail } });
-      try {
-        if (re) {
-          res.status(401).send("User already subscribed");
-        } else {
-          db.subscribers.create(mail);
-          res.status(200).send("Subscribed");
-        }
-      } catch (error) {
-        res.send(error);
-      }
+  add: async (req, res) => {
+      const {email} = req.body;
+    try {
+    if (!email) {
+      res.status(404).send("Enter email!");
+    } 
+    else{
+        const sub = db.subscribers.findAll( {email :email} );
+        if(sub){
+           db.subscribers.create({email: email})
+           res.status(200).send("ADDED");
     }
+    else{
+        res.status(401).send("in use")
+    }
+    }
+} catch (error) {
+  res.send(error);
+}
   },
 };
-

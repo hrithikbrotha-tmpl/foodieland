@@ -1,10 +1,10 @@
 const about = require("../../routes/about");
-const authors = require('../../routes/authors');
 const blogs = require("../../routes/blogs&recipies");
 const subscribers = require("../../routes/subscribers");
 const singleBlog = require("../../routes/singleBlog");
 const questions = require("../../routes/questions");
 const search = require("../../routes/search");
+const authors = require('../../routes/authors');
 const topRecipiesRouter = require("../../routes/topRecipies");
 
 module.exports =(app) =>{
@@ -18,7 +18,7 @@ module.exports =(app) =>{
       app.use('/questions' ,questions);
       app.use("/blog", singleBlog);
       app.use("/subscribers", subscribers);
-     //       app.use('/' , search);
-//   app.use("/authors", authors); 
+//       app.use('/' , search);
+//       app.use("/authors", authors); 
 //       app.use('/' , topRecipiesRouter)
 }

@@ -15,7 +15,7 @@ module.exports = {
       }
     } catch (error) {
         console.log(error)
-      res.status(404).send("NoT");
+      res.status(404).send("Select a particular blog to see details");
     }
   },
 };

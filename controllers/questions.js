@@ -6,6 +6,8 @@ getContent : async(req , res)=>{
               if(data){
                             res.status(200).json(data);
               }
-              res.status(400).send("NO DATA!");
+              else{
+                  res.status(400).send("NO DATA!");
+              }
 }
 };

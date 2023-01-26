@@ -2,16 +2,17 @@ const { DataTypes } = require("sequelize");
 module.exports = (sequelize, Datatypes) => {
   const subscribers = sequelize.define("subscribers", {
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
-      auto_Increment: true,
+      //   auto_Increment: true,
     },
     email: {
       type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
+      isUnique: true,
+      allowNull:false,
       validate: {
-        isLowercase: true,
+        isEmail: true,
       },
     },
   });
