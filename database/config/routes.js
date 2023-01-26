@@ -18,7 +18,7 @@ module.exports =(app) =>{
       app.use('/questions' ,questions);
       app.use("/blog", singleBlog);
       app.use("/subscribers", subscribers);
-//       app.use('/' , search);
+      app.use('/' , search);
 //       app.use("/authors", authors); 
 //       app.use('/' , topRecipiesRouter)
 }
