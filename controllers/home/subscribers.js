@@ -20,11 +20,11 @@ module.exports = {
            res.status(200).send("ADDED");
     }
     else{
-        res.status(401).send("in use")
+        res.status(500).send("User already subscribed !")
     }
     }
 } catch (error) {
-  res.send(error);
+  res.status(500).send(error);
 }
   },
 };

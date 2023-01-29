@@ -6,7 +6,6 @@ module.exports = (sequelize , Datatypes) => {
                      },    
                      content:{
                             type:Datatypes.TEXT,
-                            
                             // allowNull:false,
                      }
               });

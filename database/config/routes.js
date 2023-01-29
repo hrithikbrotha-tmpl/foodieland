@@ -19,6 +19,6 @@ module.exports =(app) =>{
       app.use("/blog", singleBlog);
       app.use("/subscribers", subscribers);
       app.use('/' , search);
-//       app.use("/authors", authors); 
-//       app.use('/' , topRecipiesRouter)
+      app.use("/authors", authors); 
+      app.use('/' , topRecipiesRouter)
 }

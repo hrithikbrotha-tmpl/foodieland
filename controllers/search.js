@@ -22,12 +22,13 @@
 //               res.status(401).send("Nothing here!");
 // }
 // }
+
 const {Op} = require('sequelize')
 const db = require("../database/models");
 
 module.exports = {
     searchBlogs: async (req, res) => {
-        try {
+        try{
             if(!req.query.keyword) {
                 return res.status(400).json({ message: 'keyword parameter is missing' });
             }
