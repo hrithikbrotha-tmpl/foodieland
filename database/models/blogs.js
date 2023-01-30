@@ -30,7 +30,10 @@ module.exports = (sequelize, DataTypes) => {
     authorId: {
       type: DataTypes.INTEGER,
       allowNull: false,
-    },
+    },   
 });
+blogs.associate = function (models) {
+  models.blogs.belongsTo(models.authors, { foreignKey: "authorId" });
+};
 return blogs;
 };

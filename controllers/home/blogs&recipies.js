@@ -22,7 +22,6 @@ module.exports = {
       totalPages.push(i);
     }
      return res.status(200).json(allBlogs)
-    // const allBlogs = await db.blogs.findAll();
   },
 
     //createBlogs

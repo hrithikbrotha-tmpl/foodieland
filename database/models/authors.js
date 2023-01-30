@@ -19,5 +19,12 @@ module.exports = (sequelize, Datatypes) => {
       unique: true,
     },
   });
+  authors.associate = (models) => {
+    models.authors.hasMany(models.blogs, { foriegnKey: "authorId" });
+  };
+
+  authors.associate = (models) => {
+    models.authors.hasMany(models.recipies, { foriegnKey: "AuthorId" });
+  };
   return authors;
 };

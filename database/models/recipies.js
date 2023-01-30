@@ -22,5 +22,8 @@ module.exports = (sequelize, Datatypes) => {
       //   allowNull:false
     },
   });
+  recipies.associate = function (models) {
+    models.recipies.belongsTo(models.authors, { foreignKey: "AuthorId" });
+  };
   return recipies;
 };
