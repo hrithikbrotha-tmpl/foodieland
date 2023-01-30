@@ -12,13 +12,13 @@ module.exports =(app) =>{
       console.log("routes are working....");
 
       
-      app.use("/", blogs); 
-      app.use("/blog" , blogs);
+    //   app.use("/", blogs); 
+      app.use("/blogs" , blogs);
       app.use("/about", about);
       app.use('/questions' ,questions);
       app.use("/blog", singleBlog);
       app.use("/subscribers", subscribers);
-      app.use('/' , search);
+      app.use('/search' , search);
       app.use("/authors", authors); 
-      app.use('/' , topRecipiesRouter)
+    //   app.use('/' , topRecipiesRouter)
 }

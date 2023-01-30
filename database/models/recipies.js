@@ -16,14 +16,10 @@ module.exports = (sequelize, Datatypes) => {
       type: DataTypes.TEXT,
       //   allowNull: false,
       unique: true,
-    },
-    AuthorId: {
-      type: DataTypes.INTEGER,
-      //   allowNull:false
-    },
+    }
   });
-  recipies.associate = function (models) {
-    models.recipies.belongsTo(models.authors, { foreignKey: "AuthorId" });
-  };
+//   recipies.associate = function (models) {
+//     models.recipies.belongsTo(models.authors, { foreignKey: "AuthorId" });
+//   };
   return recipies;
 };

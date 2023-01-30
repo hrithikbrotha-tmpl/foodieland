@@ -26,14 +26,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
-    },
-    authorId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },   
+    }   
 });
-blogs.associate = function (models) {
-  models.blogs.belongsTo(models.authors, { foreignKey: "authorId" });
-};
+ blogs.associate = function (models) {
+   models.blogs.belongsTo(models.authors, { foreignKey: "authorId" });
+ };
 return blogs;
 };

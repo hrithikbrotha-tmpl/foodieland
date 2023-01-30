@@ -4,5 +4,4 @@ const singleBlogController = require("../controllers/singleBlog");
 
 
 sRouter.route("/:id").get(singleBlogController.singleBlog);
-
 module.exports = sRouter;

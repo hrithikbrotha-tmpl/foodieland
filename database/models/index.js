@@ -22,7 +22,7 @@ let db_uri = process.env.DB_URI
 // if using cloud db on cloud
 if (db_uri){
     sequelize = new Sequelize(db_uri)
-    console.log("Connected to the database!")
+    console.log("Connected to the render database!")
 } else {
     console.log("local db is running...");
     console.log("local db is running...");

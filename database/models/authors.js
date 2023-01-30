@@ -4,7 +4,6 @@ module.exports = (sequelize, Datatypes) => {
   const authors = sequelize.define("authors", {
     id: {
       type: DataTypes.INTEGER,
-    //   defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
       auto_Increment: true,
     },
@@ -19,12 +18,8 @@ module.exports = (sequelize, Datatypes) => {
       unique: true,
     },
   });
-  authors.associate = (models) => {
-    models.authors.hasMany(models.blogs, { foriegnKey: "authorId" });
-  };
-
-  authors.associate = (models) => {
-    models.authors.hasMany(models.recipies, { foriegnKey: "AuthorId" });
-  };
+ authors.associate = function (models) {
+   models.authors.hasMany(models.blogs, { foreignKey: "authorId" });
+ };
   return authors;
 };

@@ -6,7 +6,7 @@ module.exports = {
     if (content.length) {
       res.status(200).json(content);
     } else {
-      res.status(404).send("Hi there this is about page and you are welcome!");
+      res.status(404).send("Hi there this is about page.... You are welcome!");
     }
   },
   postContent: async (req, res) => {
