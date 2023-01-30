@@ -14,9 +14,9 @@ module.exports = {
       res.status(404).send("Enter email!");
     } 
     else{
-        const sub = db.subscribers.findAll( {email :email} );
-        if(sub){
-           db.subscribers.create({email: email})
+        const sub = db.subscribers.findOne({where:  {email} });
+        if(!sub){
+           db.subscribers.create({email : email})
            res.status(200).send("ADDED");
     }
     else{
