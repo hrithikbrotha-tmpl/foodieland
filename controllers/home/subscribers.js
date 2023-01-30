@@ -12,7 +12,11 @@ module.exports = {
     try {
     if (!email) {
       res.status(404).send("Enter email!");
-    } 
+    }
+    else if( email ) {
+        email === String(email).toLowerCase();
+        res.send("Invalid Email!")
+    }
     else{
         const sub = db.subscribers.findOne({where:  {email} });
         if(!sub){
