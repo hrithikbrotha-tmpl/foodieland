@@ -24,8 +24,10 @@ module.exports = {
     //total pages
     let totalPosts = await db.blogs.findAll();
     totalPosts = totalPosts.length;
+
     // topItems/rec
-    const topItems = await db.recipies.findAll();
+    let topItems = await db.recipies.findAll();
+    topItems = topItems.length;
 
     let totalPages = [];
     console.log(totalPosts);
@@ -34,7 +36,7 @@ module.exports = {
     }
 
     
-    if(!topItems){
+    if(topItems === 0){
         let response = { allBlogs,totalPages };
         res.status(200).json(response);
     }
