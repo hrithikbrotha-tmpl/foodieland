@@ -9,8 +9,7 @@ const {
   DIALECT,
   TIMEZONE,
   SSL,
-  LOGGING,
-  DB_URI,
+  LOGGING
 } = process.env;
 
 const development = {
@@ -23,7 +22,6 @@ const development = {
   port: Number(DB_PORT),
   ssl: SSL,
   // logging: LOGGING,
-  db_uri: DB_URI,
 };
 
 module.exports = { development };

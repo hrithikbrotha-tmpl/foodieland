@@ -12,17 +12,12 @@ const db = {};
 let sequelize;
 let db_uri = process.env.DB_URI
 
-//if using cloud db locally
-// if (config.db_uri) {
-//     console.log("cloud db is running...");
-//     console.log("cloud db is running...");
-//     console.log("cloud db is running...");
-//     sequelize = new Sequelize(config.db_uri);
-
 // if using cloud db on cloud
 if (db_uri){
     sequelize = new Sequelize(db_uri)
     console.log("Connected to the render database!")
+    console.log("Connected to the render database!");
+    console.log("Connected to the render database!");
 } else {
     console.log("local db is running...");
     console.log("local db is running...");
