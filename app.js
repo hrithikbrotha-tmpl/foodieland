@@ -27,12 +27,11 @@ config(app);
 app.listen(PORT, async() =>{
     try{
         await db.sequelize.authenticate();
-        // await db.sequelize.sync({ alert: true });
-        await db.sequelize.sync();
+        await db.sequelize.sync({ alert: true });
+        // await db.sequelize.sync();
 
         console.log("Connected");
-        console.log(`Server is running on http://localhost:${PORT}`);
-    }catch(e){
+        console.log(`Server is running on http://localhost:${PORT}`);    }catch(e){
         console.error("Connection error", e)
     }
 });

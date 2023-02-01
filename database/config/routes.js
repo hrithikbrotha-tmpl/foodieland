@@ -5,7 +5,7 @@ const singleBlog = require("../../routes/singleBlog");
 const questions = require("../../routes/questions");
 const search = require("../../routes/search");
 const authors = require('../../routes/authors');
-const topRecipiesRouter = require("../../routes/topRecipies");
+// const topRecipiesRouter = require("../../routes/topRecipies");
 
 module.exports =(app) =>{
 
