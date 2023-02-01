@@ -48,16 +48,16 @@ const db = require("../../database/models");
                             // const nodeMailer = require("nodemailer");
                             // const feedback = require("../database/models/feedback");
 module.exports = {
-                                  see: async (req, res) => {
+          see: async (req, res) => {
                                     let s = await db.subscribers.findAll();
                                     console.log("❤️‍🔥❤️‍🔥❤️‍🔥");
-                                    res.status(200).json(s);
+                                    res.status(200).json(s);  
                                   },
                                 // change name to createSubscriber
-                                add: async (req, res) => {
+          add: async (req, res) => {
                                     // if else ?
                                     console.log(req.body);
-                                    const { firstName, lastName, email, reviews } = req.body;
+                                    const {  email } = req.body;
                                     
                                     try {
                                         if (req.body.email && req.body.email != "") {
@@ -65,21 +65,19 @@ module.exports = {
                                             if (email.match(regex)) {
           let Data = {};
           
-          if (req.body.firstName) {
-              Data.firstName = firstName;
-            }
-            if (req.body.lastName) {
-            Data.lastName = lastName;
+         
+          if (email) {
+              let p = await db.subscribers.findOne({where:{email}});
+              if (p.length) {
+                return res.staus(400).send("User already subscribed");
+              } else {
+                Data.email = email;
+                console.log(Data, "recieved!!!!!!!🔥");
+                const response = await db.subscribers.create(Data);
+                return res.status(200).json(response);
+              }
           }
-          if (req.body.email) {
-            Data.email = email;
-          }
-          if (req.body.reviews) {
-            Data.reviews = reviews;
-          }
-          console.log(Data);
-          const response = await db.subscribers.create(Data);
-          return res.status(200).json(response);
+         
         } else {
           res.status(400).send("Please enter correct email");
         }
