@@ -68,8 +68,8 @@ module.exports = {
          
           if (email) {
               let p = await db.subscribers.findOne({where:{email}});
-              if (p.length) {
-                return res.staus(400).send("User already subscribed");
+              if (p) {
+                return res.status(400).send("User already subscribed");
               } else {
                 Data.email = email;
                 console.log(Data, "recieved!!!!!!!🔥");
