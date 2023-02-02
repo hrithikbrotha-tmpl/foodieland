@@ -5,7 +5,14 @@ module.exports = {
     console.log(req.params.id);
     try {
       let id  = req.params.id;
-      let blog = await db.blogs.findAll({ where: {id} });
+      let blog = await db.blogs.findAll({
+        where: { id },
+        include: [
+          {
+            model: db.authors,
+          },
+        ]
+      });
       console.log(blog);
       if (blog != null) {
         res.json(blog);

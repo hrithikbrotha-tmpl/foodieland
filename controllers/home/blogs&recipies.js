@@ -19,8 +19,6 @@ module.exports = {
       ],
     });
 
-    // console.log(allBlogs);
-
     //total pages
     let totalPosts = await db.blogs.findAll();
     totalPosts = totalPosts.length;
